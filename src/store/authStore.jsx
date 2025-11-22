@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import axios from "axios";
 import { useEstablishmentsStore } from "./establishmentsStore"; // Assuming the establishments store is in the same directory
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5001";
 
 export const useAuthStore = create((set) => ({
   user: null,
