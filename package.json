@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "deploy": "vite build && gh-pages -d dist",
-    "start": "node server.cjs"
+    "start": "node server.js",
+    "seed": "node insertData.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",

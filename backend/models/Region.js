@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const regionSchema = new mongoose.Schema({
   id: { type: String, required: true, unique: true }, 
@@ -10,4 +10,5 @@ const regionSchema = new mongoose.Schema({
 
 const Region = mongoose.model('Region', regionSchema);
 
-module.exports = Region;
+export default Region;
+
