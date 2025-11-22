@@ -19,21 +19,21 @@ const regionsData = [
     id: "asia",
     name: "Asia",
     description: "Discover the rich and diverse culinary traditions of Asia, from the spicy curries of India to delicate sushi from Japan.",
-    imageUrl: "https://images.unsplash.com/photo-1464817739973-487774d7d10d?q=80&w=2070&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1559314809-0d155014e29e?q=80&w=1974&auto=format&fit=crop",
     countries: ["Japan", "China", "Thailand", "India"],
   },
   {
     id: "europe",
     name: "Europe",
     description: "Experience the sophisticated flavors of European cuisine, from Italian pasta to French pastries.",
-    imageUrl: "https://images.unsplash.com/photo-1467269204594-9661b133dd2b?q=80&w=2070&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=2073&auto=format&fit=crop",
     countries: ["Italy", "France", "Spain", "Greece"],
   },
   {
     id: "americas",
     name: "The Americas",
     description: "From North to South, explore the diverse tastes of the Americas, including Mexican, Brazilian, and American classics.",
-    imageUrl: "https://images.unsplash.com/photo-1518182170546-0766ce6fec05?q=80&w=2070&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?q=80&w=1980&auto=format&fit=crop",
     countries: ["Mexico", "USA", "Brazil", "Peru"],
   },
   {
@@ -52,7 +52,7 @@ const countriesData = [
     name: "Japan",
     region: "asia",
     description: "Japanese cuisine features delicate flavors and artistic presentation, from sushi to ramen.",
-    imageUrl: "https://images.unsplash.com/photo-1493936734716-77ba6da663bf?q=80&w=2069&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?q=80&w=2070&auto=format&fit=crop",
     traditionalDishes: ["Sushi", "Ramen", "Tempura", "Matcha"]
   },
   {
@@ -60,7 +60,7 @@ const countriesData = [
     name: "China",
     region: "asia",
     description: "One of the world's oldest cuisines, known for its rich history and diverse regional cooking styles.",
-    imageUrl: "https://images.unsplash.com/photo-1547592166-23acbe3a624b?q=80&w=2070&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop",
     traditionalDishes: ["Peking Duck", "Dim Sum", "Kung Pao Chicken"]
   },
   {
@@ -102,7 +102,7 @@ const countriesData = [
     name: "Mexico",
     region: "americas",
     description: "Mexican cuisine offers spicy, colorful dishes like tacos and enchiladas, recognized as UNESCO heritage.",
-    imageUrl: "https://images.unsplash.com/photo-1518182170546-0766ce6fec05?q=80&w=2070&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?q=80&w=2070&auto=format&fit=crop",
     traditionalDishes: ["Tacos", "Mole", "Enchiladas", "Guacamole"]
   },
   {
@@ -110,7 +110,7 @@ const countriesData = [
     name: "USA",
     region: "americas",
     description: "American cuisine is a melting pot of global influences, famous for burgers, BBQ, and comfort food.",
-    imageUrl: "https://images.unsplash.com/photo-1485199692108-c3b537907c4d?q=80&w=2074&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1899&auto=format&fit=crop",
     traditionalDishes: ["Burger", "BBQ Ribs", "Apple Pie", "Hot Dog"]
   },
   // Africa
@@ -145,7 +145,7 @@ const dishesData = [
     id: "peking-duck",
     name: "Peking Duck",
     description: "A dish from Beijing that has been prepared since the Imperial era, characterized by its thin, crisp skin.",
-    imageUrl: "https://images.unsplash.com/photo-1563245372-f21720e3260d?q=80&w=2070&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop",
     country: "China"
   },
   // Thailand
@@ -208,7 +208,7 @@ const dishesData = [
     id: "tagine",
     name: "Tagine",
     description: "A North African stew of spiced meat and vegetables prepared by slow cooking in a shallow earthenware cooking dish.",
-    imageUrl: "https://images.unsplash.com/photo-1511690656952-34342d2c28f5?q=80&w=2070&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?q=80&w=2070&auto=format&fit=crop",
     country: "Morocco"
   }
 ];
@@ -221,7 +221,7 @@ const establishmentsData = [
     country: "Japan",
     type: ["fine-dining", "restaurant"],
     description: "World-famous sushi restaurant in Tokyo, known for its master chef Jiro Ono and omakase courses.",
-    imageUrl: "https://images.unsplash.com/photo-1579584425555-c3ce17fd436d?q=80&w=2070&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?q=80&w=2070&auto=format&fit=crop",
     rating: 5.0,
     address: "Ginza, Tokyo, Japan"
   },
@@ -231,7 +231,7 @@ const establishmentsData = [
     country: "Japan",
     type: ["casual", "restaurant"],
     description: "Famous for its tonkotsu ramen and solo dining booths.",
-    imageUrl: "https://images.unsplash.com/photo-1552611052-05e102951fc4?q=80&w=2064&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?q=80&w=2070&auto=format&fit=crop",
     rating: 4.7,
     address: "Shibuya, Tokyo, Japan"
   },
@@ -296,7 +296,7 @@ const establishmentsData = [
     country: "Spain",
     type: ["fine-dining", "restaurant"],
     description: "A restaurant in Girona, Catalonia, Spain which holds 3 Michelin stars.",
-    imageUrl: "https://images.unsplash.com/photo-1550966871-3ed3c47e2ce2?q=80&w=2070&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1543783207-ec64e4d95325?q=80&w=2070&auto=format&fit=crop",
     rating: 4.9,
     address: "Girona, Spain"
   },
@@ -307,7 +307,7 @@ const establishmentsData = [
     country: "Mexico",
     type: ["fine-dining", "restaurant"],
     description: "Offers a unique tasting menu of Mexican cuisine by Chef Enrique Olvera.",
-    imageUrl: "https://images.unsplash.com/photo-1587574293340-3579217d67ca?q=80&w=2069&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?q=80&w=2070&auto=format&fit=crop",
     rating: 4.9,
     address: "Polanco, Mexico City, Mexico"
   },
