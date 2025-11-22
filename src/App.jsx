@@ -19,9 +19,9 @@ import { EditProfilePage } from "./pages/EditProfilePage";
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-secondary-50 text-secondary-900 font-sans">
         <Header />
-        <main className="pt-24 pb-12">
+        <main className="pt-16">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginForm />} />
@@ -37,7 +37,7 @@ function App() {
             <Route path="/profile" element={<UserProfile />} />
             <Route path="/edit-profile" element={<EditProfilePage />} />
 
-            {/* Редирект з будь-якого іншого маршруту */}
+            {/* Redirect from any other route */}
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>

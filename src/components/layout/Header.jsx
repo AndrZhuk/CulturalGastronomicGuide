@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Menu, X, UtensilsCrossed } from "lucide-react";
 import { useAuthStore } from "../../store/authStore";
-import "../../style/Header.css";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,102 +14,143 @@ export function Header() {
   };
 
   return (
-    <header className="header">
-      <div className="header-container">
-        <div className="header-content">
-          <Link to="/" className="logo-link">
-            <UtensilsCrossed className="logo-icon" />
-            <span className="site-name">
+    <header className="fixed w-full bg-white/90 backdrop-blur-md z-50 border-b border-secondary-200 shadow-sm transition-all duration-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo */}
+          <Link to="/" className="flex items-center space-x-2 group">
+            <div className="bg-primary-50 p-2 rounded-full group-hover:bg-primary-100 transition-colors duration-300">
+              <UtensilsCrossed className="h-6 w-6 text-primary-600" />
+            </div>
+            <span className="text-xl font-bold text-secondary-900 tracking-tight">
               World
-              <span className="text-red-600 hover:text-red-600 transition-colors duration-300">
+              <span className="text-primary-600 group-hover:text-primary-700 transition-colors duration-300">
                 Cuisine
               </span>
             </span>
           </Link>
 
-          <nav className="nav">
-            <Link to="/regions" className="nav-link">
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-8">
+            <Link 
+              to="/regions" 
+              className="text-sm font-medium text-secondary-600 hover:text-primary-600 transition-colors"
+            >
               Regions
             </Link>
-            <Link to="/establishments" className="nav-link">
+            <Link 
+              to="/establishments" 
+              className="text-sm font-medium text-secondary-600 hover:text-primary-600 transition-colors"
+            >
               Establishments
             </Link>
             {isAuthenticated ? (
               <>
-                <Link to="/saved" className="nav-link">
+                <Link 
+                  to="/saved" 
+                  className="text-sm font-medium text-secondary-600 hover:text-primary-600 transition-colors"
+                >
                   Saved Places
                 </Link>
-                <div className="auth-links">
-                  <Link to="/profile" className="nav-link">
+                <div className="flex items-center space-x-4 pl-4 border-l border-secondary-200">
+                  <Link 
+                    to="/profile" 
+                    className="text-sm font-medium text-secondary-900 hover:text-primary-600 transition-colors"
+                  >
                     {user?.name}
                   </Link>
-                  <button onClick={handleLogout} className="logout-button">
+                  <button 
+                    onClick={handleLogout} 
+                    className="text-sm font-medium text-secondary-500 hover:text-red-600 transition-colors"
+                  >
                     Logout
                   </button>
                 </div>
               </>
             ) : (
-              <div className="auth-links">
-                <Link to="/login" className="auth-button">
-                  Logіn
+              <div className="flex items-center gap-3 pl-4 border-l border-secondary-200">
+                <Link 
+                  to="/login" 
+                  className="text-sm font-medium text-secondary-700 hover:text-primary-600 transition-colors px-3 py-2 rounded-md hover:bg-secondary-50"
+                >
+                  Login
                 </Link>
-                <Link to="/register" className="auth-button">
-
+                <Link 
+                  to="/register" 
+                  className="text-sm font-medium bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-all shadow-md hover:shadow-lg active:scale-95"
+                >
                   Register
                 </Link>
               </div>
             )}
           </nav>
 
+          {/* Mobile Menu Button */}
           <button
-            className="mobile-menu-button"
+            className="md:hidden p-2 rounded-md text-secondary-600 hover:text-primary-600 hover:bg-secondary-100 transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
-              <X className="close-menu-button" />
+              <X className="h-6 w-6" />
             ) : (
-              <Menu className="open-menu-button" />
+              <Menu className="h-6 w-6" />
             )}
           </button>
         </div>
 
+        {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="mobile-menu">
-            <div className="flex flex-col space-y-4">
+          <div className="md:hidden py-4 px-2 bg-white border-t border-secondary-100 absolute w-full left-0 shadow-lg">
+            <div className="flex flex-col space-y-2">
               <Link
                 to="/regions"
-                className="mobile-menu-item"
+                className="block px-4 py-2 rounded-md text-base font-medium text-secondary-700 hover:bg-primary-50 hover:text-primary-600 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Regions
               </Link>
               <Link
                 to="/establishments"
-                className="mobile-menu-item"
+                className="block px-4 py-2 rounded-md text-base font-medium text-secondary-700 hover:bg-primary-50 hover:text-primary-600 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Establishments
               </Link>
               {isAuthenticated ? (
                 <>
-                  <Link to="/saved" className="mobile-menu-item">
-                    Save Places
+                  <Link 
+                    to="/saved" 
+                    className="block px-4 py-2 rounded-md text-base font-medium text-secondary-700 hover:bg-primary-50 hover:text-primary-600 transition-colors"
+                  >
+                    Saved Places
                   </Link>
-                  <div className="auth-links">
-                    <Link to="/profile" className="mobile-menu-item">
+                  <div className="border-t border-secondary-100 my-2 pt-2">
+                    <Link 
+                      to="/profile" 
+                      className="block px-4 py-2 rounded-md text-base font-medium text-secondary-900 hover:bg-primary-50 transition-colors"
+                    >
                       {user?.name}
                     </Link>
-                    <button onClick={handleLogout} className="mobile-menu-item">
+                    <button 
+                      onClick={handleLogout} 
+                      className="block w-full text-left px-4 py-2 rounded-md text-base font-medium text-red-600 hover:bg-red-50 transition-colors"
+                    >
                       Logout
                     </button>
                   </div>
                 </>
               ) : (
-                <div className="auth-links">
-                  <Link to="/login" className="auth-button">
+                <div className="border-t border-secondary-100 my-2 pt-4 px-4 flex flex-col gap-3">
+                  <Link 
+                    to="/login" 
+                    className="block w-full text-center px-4 py-2 rounded-lg border border-secondary-300 text-secondary-700 font-medium hover:bg-secondary-50 transition-colors"
+                  >
                     Login
                   </Link>
-                  <Link to="/register" className="auth-button">
+                  <Link 
+                    to="/register" 
+                    className="block w-full text-center px-4 py-2 rounded-lg bg-primary-600 text-white font-medium hover:bg-primary-700 shadow-sm transition-colors"
+                  >
                     Register
                   </Link>
                 </div>
