@@ -1,6 +1,8 @@
 import { create } from "zustand";
 import axios from "axios";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
 export const useCountriesStore = create((set, get) => ({
   countries: [],
   selectedCountry: null,
@@ -9,7 +11,7 @@ export const useCountriesStore = create((set, get) => ({
   fetchCountries: async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3000/api/countries"
+        `${API_URL}/api/countries`
       );
       set({ countries: response.data });
     } catch (error) {
@@ -21,7 +23,7 @@ export const useCountriesStore = create((set, get) => ({
     try {
       const lowerCaseCountryName = countryName.toLowerCase();
       const response = await axios.get(
-        `https://my-project-x98y.onrender.com/api/dishes/${lowerCaseCountryName}`
+        `${API_URL}/api/dishes/${lowerCaseCountryName}`
       );
       return response.data;
     } catch (error) {

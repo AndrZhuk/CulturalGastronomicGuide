@@ -3,13 +3,15 @@ import axios from "axios";
 import { useAuthStore } from "./authStore"; 
 
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
 export const useEstablishmentsStore = create((set, get) => ({
   establishments: [],
   savedEstablishments: [],
 
   fetchEstablishments: async () => {
     try {
-      const response = await axios.get("http://localhost:3000com/api/establishments");
+      const response = await axios.get(`${API_URL}/api/establishments`);
       set({ establishments: response.data });
     } catch (error) {
       console.error("Error fetching establishments:", error);
@@ -25,7 +27,7 @@ export const useEstablishmentsStore = create((set, get) => ({
   
       if (isAlreadySaved) {
         const response = await axios.delete(
-          `https://my-project-x98y.onrender.com/api/users/${user.email}/remove-establishment`,
+          `${API_URL}/api/users/${user.email}/remove-establishment`,
           { data: { establishmentId: id } } 
         );
         set({
@@ -35,7 +37,7 @@ export const useEstablishmentsStore = create((set, get) => ({
         });
       } else {
         const response = await axios.post(
-          `https://my-project-x98y.onrender.com/api/users/${user.email}/save-establishment`,
+          `${API_URL}/api/users/${user.email}/save-establishment`,
           { establishmentId: id }
         );
   

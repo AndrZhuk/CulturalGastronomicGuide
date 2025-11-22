@@ -1,6 +1,8 @@
 import { create } from "zustand";
 import axios from "axios";
 import { useEstablishmentsStore } from "./establishmentsStore"; // Assuming the establishments store is in the same directory
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
 export const useAuthStore = create((set) => ({
   user: null,
   isAuthenticated: false,
@@ -8,7 +10,7 @@ export const useAuthStore = create((set) => ({
   login: async (email, password) => {
    
       const response = await axios.post(
-        "http://localhost:3000/api/users/login",
+        `${API_URL}/api/users/login`,
         { email, password }
       );
       const userData = response.data.user;
@@ -24,7 +26,7 @@ export const useAuthStore = create((set) => ({
       }
 
       const response = await axios.post(
-        "http://localhost:3000/api/users/register",
+        `${API_URL}/api/users/register`,
         {
           name,
           email,
@@ -52,7 +54,7 @@ export const useAuthStore = create((set) => ({
       }
 
       const response = await axios.put(
-        `https://my-project-x98y.onrender.com/api/users/${user._id}`,
+        `${API_URL}/api/users/${user._id}`,
         {
           name: updatedData.name,
           birthYear: updatedData.birthYear,
